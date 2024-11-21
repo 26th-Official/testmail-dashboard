@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import { Card, CardHeader, CardContent } from "./components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs";
+import { Switch } from "./components/ui/switch";
 import { Loader2 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "./components/ui/badge";
 
 import {
 	Dialog,
@@ -16,9 +16,9 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL; // Testmail API base URL
-const NAMESPACE = import.meta.env.VITE_NAMESPACE; // Your inbox ID
+const API_KEY = import.meta.env.VITE_API_KEY || "";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.testmail.app/api"; // Testmail API base URL
+const NAMESPACE = import.meta.env.VITE_NAMESPACE || ""; // Your inbox ID
 
 const App = () => {
 	const [emails, setEmails] = useState([]);

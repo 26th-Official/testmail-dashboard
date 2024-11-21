@@ -1,7 +1,14 @@
 # Custom Dashboard for TestMail.app
+![Testmail.app](https://avatars.githubusercontent.com/u/56960009?s=280&v=4)
+
 
 ## Overview
 This is a custom dashboard designed to view emails from TestMail.app using its API. The dashboard provides a user-friendly interface to manage and display emails efficiently.
+
+## Screenshots
+![Dashboard Screenshot](Dashboard.png)
+![Settings Screenshot](Settings.png)
+
 
 ## Features
 - View incoming emails in real-time.
@@ -18,7 +25,7 @@ This is a custom dashboard designed to view emails from TestMail.app using its A
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/testmail-dashboard.git
+   git clone https://github.com/26thpfficial/testmail-dashboard.git
    cd testmail-dashboard
    ```
 
