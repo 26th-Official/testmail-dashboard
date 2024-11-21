@@ -6,8 +6,8 @@
 This is a custom dashboard designed to view emails from TestMail.app using its API. The dashboard provides a user-friendly interface to manage and display emails efficiently.
 
 ## Screenshots
-![Dashboard Screenshot](Dashboard.png)
-![Settings Screenshot](Settings.png)
+![Dashboard Screenshot](/public/Dashboard.png)
+![Settings Screenshot](/public/Settings.png)
 
 
 ## Features
