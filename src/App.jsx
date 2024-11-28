@@ -5,7 +5,7 @@ import { Input } from "./components/ui/input";
 import { Card, CardHeader, CardContent } from "./components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/ui/tabs";
 import { Switch } from "./components/ui/switch";
-import { Loader2 } from "lucide-react";
+import { Copy, Loader2 } from "lucide-react";
 import { Badge } from "./components/ui/badge";
 
 import {
@@ -100,10 +100,34 @@ const App = () => {
 	return (
 		<div className="size-full p-6">
 			<Tabs defaultValue="inbox">
-				<TabsList className="mb-6">
-					<TabsTrigger value="inbox">Inbox</TabsTrigger>
-					<TabsTrigger value="settings">Settings</TabsTrigger>
-				</TabsList>
+				<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+					<TabsList>
+						<TabsTrigger value="inbox">Inbox</TabsTrigger>
+						<TabsTrigger value="settings">Settings</TabsTrigger>
+					</TabsList>
+
+					<div className="flex items-center gap-2">
+						<code className="bg-muted px-2 py-1 rounded text-sm">
+							{`${settings.namespace || "test"}.{tag}@inbox.testmail.app`}
+						</code>
+						<Button
+							variant="ghost" 
+							size="icon"
+							className="w-auto px-2"
+							onClick={() => {
+								navigator.clipboard.writeText(`${settings.namespace || "test"}.{tag}@inbox.testmail.app`);
+								const button = document.activeElement;
+								const originalContent = button.innerHTML;
+								button.innerHTML = '<span>Copied!</span>';
+								setTimeout(() => {
+									button.innerHTML = originalContent;
+								}, 2000);
+							}}
+						>
+							<Copy size={16} />
+						</Button>
+					</div>
+				</div>
 
 				{/* Inbox */}
 				<TabsContent value="inbox">
